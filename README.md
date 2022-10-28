@@ -1,7 +1,7 @@
 # Simple-Linux-MC-Start-Script
 This is a simple shell/bash based Linux start script. This was made for my own use but I've uploaded it for anyone else to use as well. 
 It includes:
-- A Start script
+- A Start script (Both for server jars and other start scripts)
 - A Backup Script
 - A Restore Script
 
@@ -22,7 +22,7 @@ Zip
 - Pretty much every distro comes with zip, but if yours doesn't, it is required for the backup and restore scripts.
 
 ## Configuration
-The `Start.sh` script needs to be configured before use. All of the configureable aspects can be found at the top of the file.
+The `Start.sh` and `StartForScripts.sh` scripts need to be configured before use. All of the configureable aspects can be found at the top of the file.
 
 #### NAME
 This will be the alphanumeric name of the screen. This is different from the ID. It can be used to search and connect to the screen.
@@ -71,10 +71,17 @@ Eg.
 - `TERMCMD=""` // Does not attempt to open a terminal window.
 
 ## Usage
-All you do is drop the files into the servers root folder. From there you can run them and they should all work AFTER CONFIGURED. (See Configuration)
-After running this scripts you can close out your terminal window or log out of SSH and they should continue to run on your machine. To get back into them (attach), simply open your terminal again either through the terminal GUI or any other means and run `screen -rS NAME`. In the event someone is attached to them or you want to allow multiple people to attach to them, replace `r` with `x`. Please keep in mind the it is CASE-SENSITIVE. 
+All you do is drop the files into the servers root folder. There are two files that start the server, `Start.sh` and `StartForScripts.sh`. Only one is needed. 
+The purpose of `Start.sh` is to directly launch your Minecraft server with all of the configurations you want, in a screen. 
+The purpose of `StartForScripts.sh` is to allow the use of premade start scripts but still launch them in a screen.
+
+After you drop the files into your servers root directory, open the start script in your favorite text editor and fill in the fields near the top of the file. There will be a line that tells you where to stop. (See the 'Configuration' section above). 
+
+After running this scripts you can close out your terminal window or log out of SSH and they should continue to run on your machine. 
+To get back into them (attach), simply open your terminal again either through the terminal GUI or any other means and run `screen -rS NAME`. In the event someone is attached to them or you want to allow multiple people to attach to them, replace `r` with `x`. Please keep in mind the it is CASE-SENSITIVE. 
 If you cannot remember the name you configured for your screen, run `screen -ls` to view a list of all screens that are currently running. This works for both the server start script and the backup/restore scripts. 
 To close a screen you can either attach to the screen and type `exit` or you can run `screen -S NAME -X exit`. Both will terminate the screen and stop any running process that is taking place on that screen.
+
 Upon doing your first backup it will make a backup folder in your servers root folder and move `SubProcessOfRestore.sh` into it. These subprocesses can be ran on their own but they are meant to be ran by the `Backup.sh` file. The `Backup.sh` file is responsible for managing the backups and restores and also runs them through screens for conveinience. Running a backup or restore should be easy as it will guide you through the process in the terminal. Zipping and Unzipping are done in verbose mode so you can watch it happen instead of wondering if it has frozen or not. 
 
 That's all! Hope you enjoy it!
