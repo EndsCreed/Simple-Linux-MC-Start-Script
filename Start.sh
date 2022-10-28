@@ -5,7 +5,7 @@
 # Settings (You may change these)
 NAME="" # This will be the name of the screen.
 
-JAR="" # This is the name of the server jar you want to launch. Do not include the .jar extension.
+JAR="" # This is the name of the server jar you want to launch. Include the .jar extension.
 
 JAVA="" #This is the full path of the java version to be used for this server.
 # BELOW ARE THE NAMES ON MY OWN PC. PLEASE CHECK YOURS FIRST AS THESE MAY NOT WORK
@@ -52,7 +52,7 @@ check() {
 # Start the server.
 start_server() {
 
- screen -S $NAME -X stuff "echo 'Starting ${NAME}...' && $JAVA -Xms$MEM -Xmx$MEM $ARGS -jar ${JAR}.jar nogui
+ screen -S $NAME -X stuff "echo 'Starting ${NAME}...' && $JAVA -Xms$MEM -Xmx$MEM $ARGS -jar ${JAR} nogui
 "
 }
 
