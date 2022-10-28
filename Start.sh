@@ -59,7 +59,9 @@ start_server() {
 main() { # The main method. Runs the check method, then starts the server.
   check
   start_server
-  $TERMCMD screen -r -S $NAME # This may need to be changed depending on your terminal.
+  if -n $TERMCMD; then
+    $TERMCMD screen -r -S $NAME # This may need to be changed depending on your terminal.
+  fi
 }
 
 # Despite being at the bottom, this is the first line to run. It runs the above main method which then runs everything else.
