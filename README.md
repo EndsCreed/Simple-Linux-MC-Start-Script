@@ -9,6 +9,9 @@ It includes:
 I am not that experienced with bash/shell. I know enough to make it do what I want it to do but that's about it. If it breaks or you want to chnage some lines to cut down on the line count or make it more efficient, feel free.
 
 # Dependencies
+Bash
+- All of these scripts start with `#!/bin/bash` and run using bash and is required for them to work out of the box. Feel free to change them to /bin/sh if you want or to whatever else you may use. It shouldn't be hard to change this.
+
 Screen
 - These scripts make heavy use of screens. This is to allow everything to be SSH friendly and allow you to easily pop in and out of the consoles/scripts without having to worry about them closing out and cancelling. Mosy distros should allow you to easily install screen with your package manager. Eg: `sudo apt install screen` or `sudo dnf install screen`.
 
