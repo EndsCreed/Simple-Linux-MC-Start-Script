@@ -35,10 +35,10 @@ Eg.
 Above is an example of what you can expect to see in your screen listing if you set it to `NAME="All-The-Fabric`
 
 #### JAR
-This will be the name of the server jar itself. Do not include the .jar file extention here. Just the name.
+This will be the name of the server jar itself. Do Include the .jar file extention here.
 Eg.
-- `JAR="server"
-- `JAR="forge-1.12.2-14.23.5.2854-universal"`
+- `JAR="server.jar"
+- `JAR="forge-1.12.2-14.23.5.2854-universal.jar"`
 
 #### JAVA
 This is the full path to your java installation. This can be found by running `sudo alternatives --config java`. This will spit back a list of currently installed java versions like below.
