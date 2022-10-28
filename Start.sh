@@ -22,8 +22,6 @@ MEM="" # The amount of ram to be dedicated to the server. This will be min and m
 ARGS="-Dterminal.jline=false -Dterminal.ansi=true -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:InitiatingHeapOccupancyPercent=15 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true"
 # The above args are Aikar's args by default.
 
-PASS="" # OPTIONAL! This is your sudo password and is ONLY required if you want it to run completely automatically. if you're okay with typing in your pass manually, leave this empty.\
-
 TERMCMD="gnome-terminal --" # You may need to change this depending on the terminal your distro uses.
 
 # ***************DO NOT TOUCH BELOW HERE***************
