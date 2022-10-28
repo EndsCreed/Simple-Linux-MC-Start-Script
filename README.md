@@ -6,7 +6,7 @@ It includes:
 - A Restore Script
 
 ## Disclaimer
-I am not that experienced with bash/shell. I know enough to make it do what I want it to do but that's about it. If it breaks or you want to chnage some lines to cut down on the line count or make it more efficient, feel free.
+I am not that experienced with bash/shell. I know enough to make it do what I want it to do but that's about it. If it breaks or you want to change some lines to cut down on the line count or make it more efficient, feel free.
 
 ## Dependencies
 Bash
@@ -16,13 +16,13 @@ Java
 - This is pretty obvious as you'll need it for Minecraft as well but my script also directly accesses your java installation. Make sure you have it installed!
 
 Screen
-- These scripts make heavy use of screens. This is to allow everything to be SSH friendly and allow you to easily pop in and out of the consoles/scripts without having to worry about them closing out and cancelling. Mosy distros should allow you to easily install screen with your package manager. Eg: `sudo apt install screen` or `sudo dnf install screen`.
+- These scripts make heavy use of screens. This is to allow everything to be SSH friendly and allow you to easily pop in and out of the consoles/scripts without having to worry about them closing out and canceling. Most distros should allow you to easily install screen with your package manager. Eg: `sudo apt install screen` or `sudo dnf install screen`.
 
 Zip
 - Pretty much every distro comes with zip, but if yours doesn't, it is required for the backup and restore scripts.
 
 ## Configuration
-The `Start.sh` and `StartForScripts.sh` scripts need to be configured before use. All of the configureable aspects can be found at the top of the file.
+The `Start.sh` and `StartForScripts.sh` scripts need to be configured before use. All of the configurable aspects can be found at the top of the file.
 
 #### NAME
 This will be the alphanumeric name of the screen. This is different from the ID. It can be used to search and connect to the screen.
@@ -58,8 +58,8 @@ Eg.
 - `MEM="6144M"` // 6144 Megabytes of RAM (6 Gigabytes)
 
 #### ARGS
-This section is the java arguements section. This can be left as is or it can be blank. If you have args that you want to use you can delete everything in this space and put your own. The default arguments that are pre-loaded into this variable are Aikar's args and are regarded as some of the best java arguements for server optimization at this time. I won't provide details on how to configure good args here as I don't really know how to make optimized java arguements. 
-If you're loading a modpack, there is a chance that the modpack authors will provide to you a set of arguements. If they do, I would recommend using them. Especially if it's a very large and well know modpack such as a FeedTheBeast or AllTheFabric/Mods pack.
+This section is the java arguments section. This can be left as is or it can be blank. If you have args that you want to use you can delete everything in this space and put your own. The default arguments that are pre-loaded into this variable are Aikar's args and are regarded as some of the best java arguments for server optimization at this time. I won't provide details on how to configure good args here as I don't really know how to make optimized java arguments. 
+If you're loading a modpack, there is a chance that the modpack authors will provide to you a set of arguments. If they do, I would recommend using them. Especially if it's a very large and well know modpack such as a FeedTheBeast or AllTheFabric/Mods pack.
 If you have any issues with these args, you may simply leave the quotes empty.
 Eg.
 - `ARGS=""`
