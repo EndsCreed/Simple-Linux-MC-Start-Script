@@ -28,7 +28,7 @@ The `Start.sh` and `StartForScripts.sh` scripts need to be configured before use
 This will be the alphanumeric name of the screen. This is different from the ID. It can be used to search and connect to the screen.
 Eg.
 - `NAME="My-Vanilla-World"`
-- `NAME="All-The-Fabic"`
+- `NAME="All-The-Fabric"`
 
 ![image](https://user-images.githubusercontent.com/63371815/198675818-5bba4ddf-21b6-4540-a4c1-3d0334631a4a.png)
 
