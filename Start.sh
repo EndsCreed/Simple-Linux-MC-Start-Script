@@ -8,14 +8,6 @@ NAME="" # This will be the name of the screen.
 JAR="" # This is the name of the server jar you want to launch. Include the .jar extension.
 
 JAVA="" #This is the full path of the java version to be used for this server.
-# BELOW ARE THE NAMES ON MY OWN PC. PLEASE CHECK YOURS FIRST AS THESE MAY NOT WORK
-# Ubuntu/PopOS! ------------------
-# /usr/lib/jvm/java-1.17.0-openjdk-amd64/bin/java - For 1.18+
-# /usr/lib/jvm/java-1.16.0-openjdk-amd64/bin/java - For 1.13 - 1.17.x
-# /usr/lib/jvm/java-1.8.0-openjdk-amd64/bin/java  - For 1.7 - 1.12.x
-# Nobara -------------------------
-# /usr/lib/jvm/java-17-openjdk-17.0.4.1.1-1.fc36.x86_64/bin/java
-# /usr/lib/jvm/java-11-openjdk-11.0.16.1.1-1.fc36.x86_64/bin/java
 
 MEM="" # The amount of ram to be dedicated to the server. This will be min and max.
 
