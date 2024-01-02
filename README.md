@@ -24,6 +24,12 @@ Zip
 ## Configuration
 The `Start.sh` and `StartForScripts.sh` scripts need to be configured before use. All of the configurable aspects can be found at the top of the file.
 
+### AUTO_RESTART
+This will determine if the start script will attempt to restart the minecraft server after it stops. 
+Eg.
+- `AUTO_RESTART="true"`
+- `AUTO_RESTART="false"`
+
 #### NAME
 This will be the alphanumeric name of the screen. This is different from the ID. It can be used to search and connect to the screen.
 Eg.

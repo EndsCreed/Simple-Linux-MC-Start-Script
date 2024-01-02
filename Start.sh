@@ -3,11 +3,13 @@
 #This script was made on Nobara which is Fedora based and some things may be different from Debian based distros. Most notibly, the java paths.
 
 # Settings (You may change these)
+AUTO_RESTART="true" # true|false - Allow the script to attempt to auto restart after the MC Server shuts down.
+
 NAME="" # This will be the name of the screen.
 
 JAR="" # This is the name of the server jar you want to launch. Include the .jar extension.
 
-JAVA="" #This is the full path of the java version to be used for this server.
+JAVA="" #This is the full path of the java version to be used for this server. Found with "alternatives --config java" or in a custom path you placed java in.
 
 MEM="" # The amount of ram to be dedicated to the server. This will be min and max.
 
@@ -21,15 +23,11 @@ TERMCMD="gnome-terminal --" # You may need to change this depending on the termi
 # Check Java Version and Screens and set/create it if nessessary
 check() {
 
-  screen -ls > screen.txt # Read screen list
+  if echo $STY | grep -q "$NAME"; then
+    echo 'In screen! Starting the server!'
+    start_server
 
-  if ! grep -q $NAME screen.txt; then # If screen list does NOT contain the NAME of the screen specified. Start it silently
-
-    echo "Starting Screen"
-    screen -dmS $NAME bash
-
-  else # Otherwise, if the screen does exist, give 10 seconds to cancel to continuation of the code (Which will start the server)
-
+  elif screen -ls | grep -q "$NAME"; then # If screen list does NOT contain the NAME of the screen specified. Start it silently
     echo "Screen Detected. Starting in 5 seconds... Press [ctrl + c] to cancel"
     i=4
     while [ $i -ge 1 ]
@@ -38,20 +36,38 @@ check() {
       echo $i
       i=$((i-1))
     done
+
+  else # Otherwise, if the screen does exist, give 10 seconds to cancel to continuation of the code (Which will start the server)
+    echo "Starting Screen"
+    screen -dmS $NAME ./Start.sh
+
   fi
+
 }
 
 # Start the server.
 start_server() {
 
- screen -S $NAME -X stuff "echo 'Starting ${NAME}...' && $JAVA -Xms$MEM -Xmx$MEM $ARGS -jar ${JAR} nogui
-"
+  echo "Starting $NAME"
+  $JAVA -Xms$MEM -Xmx$MEM $ARGS -jar ${JAR} nogui
+
+  if [ $AUTO_RESTART == "true" ]; then
+    echo "Auto-Restart Enabled. Attempting to restart in 5 seconds... Press [ctrl + c] to cancel"
+    i=4
+    while [ $i -ge 1 ]
+    do
+      sleep 1
+      echo $i
+      i=$((i-1))
+    done
+    start_server
+  fi
+
 }
 
 main() { # The main method. Runs the check method, then starts the server.
   check
-  start_server
-  if -n $TERMCMD; then
+  if [ -n "$TERMCMD" ]; then
     $TERMCMD screen -r -S $NAME # This may need to be changed depending on your terminal.
   fi
 }
